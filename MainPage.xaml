@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AthkarApp.MainPage"
+             BackgroundColor="#121212">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="30" Padding="30" VerticalOptions="Center">
+
+            <!-- عنوان التطبيق -->
+            <Label Text="صَلِّ عَلَى النَّبِيِّ ﷺ"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#D4AF37"
+                   HorizontalOptions="Center" />
+
+            <Label Text="«مَنْ صَلَّى عَلَيَّ صَلَاةً صَلَّى اللَّهُ عليه بِهَا عَشْرًا»"
+                   FontSize="14"
+                   TextColor="#A0A0A0"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- كارت التحكم في التوقيت والتذكير -->
+            <Border BackgroundColor="#1E1E1E" Padding="25" StrokeShape="RoundRectangle 20" Stroke="#D4AF37">
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="حدد الفاصل الزمني للتذكير (بالدقائق):" 
+                           TextColor="White" 
+                           FontSize="16" 
+                           HorizontalOptions="Center"/>
+
+                    <!-- خانة إدخال الدقائق -->
+                    <Entry x:Name="MinutesEntry" 
+                           Text="1"
+                           Keyboard="Numeric"
+                           TextColor="White"
+                           BackgroundColor="#2D2D2D"
+                           FontSize="22"
+                           HorizontalTextAlignment="Center"
+                           HeightRequest="50"/>
+
+                    <!-- زر بدء أو إيقاف التذكير -->
+                    <Button x:Name="ToggleBtn"
+                            Text="بدء التذكير المستمر"
+                            Clicked="OnToggleReminderClicked"
+                            BackgroundColor="#2D5A27"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="55"
+                            FontAttributes="Bold"
+                            FontSize="18"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- زر تجربة سماع الصلاة على النبي فوراً -->
+            <Button Text="🔊 استمع للصلاة على النبي الآن"
+                    Clicked="OnTestAudioClicked"
+                    BackgroundColor="#333333"
+                    TextColor="#D4AF37"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    FontSize="15"/>
+
+            <!-- زر حول التطبيق -->
+            <Button Text="ℹ️ حول التطبيق"
+                    Clicked="OnAboutClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="#A0A0A0"
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
